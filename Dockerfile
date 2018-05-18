@@ -1,8 +1,13 @@
-FROM node:alpine
+FROM node:6-alpine
 MAINTAINER dyoshikawa
 
+# install aglio
+RUN apk add -U --no-cache --virtual .gyp make g++ python
+RUN npm i -g aglio
+RUN apk del .gyp
+
 # install pip
-RUN apk add -U --no-cache py2-pip
+RUN apk add --no-cache py2-pip
 RUN pip install --upgrade pip
 
 # install awscli
