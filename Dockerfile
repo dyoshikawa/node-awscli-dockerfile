@@ -1,12 +1,9 @@
-FROM python:3.6-alpine
+FROM node:alpine
 MAINTAINER dyoshikawa
 
-# upgrade pip
+# install pip
+RUN apk add -U --no-cache py2-pip
 RUN pip install --upgrade pip
 
 # install awscli
 RUN pip install awscli
-
-# make node environment
-# install packages
-RUN apk add -U --no-cache nodejs
