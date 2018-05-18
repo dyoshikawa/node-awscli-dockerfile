@@ -7,7 +7,7 @@ RUN npm i -g aglio
 RUN apk del .gyp
 
 # install pip
-RUN apk add --no-cache py2-pip
+RUN apk add --no-cache py-pip
 RUN pip install --upgrade pip
 
 # install awscli
